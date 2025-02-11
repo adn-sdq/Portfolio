@@ -20,9 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <header>
-        <Analytics/>
-      </header>
+      <Analytics />
       <body
         className={`${InterSans.variable} antialiased`}
       >
