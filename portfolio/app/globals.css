@@ -7,29 +7,26 @@
   --background: #ffffff;
   --foreground: #000000;
 }
-/* 
-@layer utilities {
-  .animation-delay-2000 {
-    animation-delay: 0s;
-  }
-  .animation-delay-4000 {
-    animation-delay: 0s;
-  }
-  .animation-delay-6000 {
-    animation-delay: 0s;
-  }
-} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
     --foreground: #ffffff;
   }
+} */
+
+::-webkit-scrollbar {
+  display: none;
 }
 
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: white;
+  background: black;
   font-family: 'Inter', sans-serif;
 }

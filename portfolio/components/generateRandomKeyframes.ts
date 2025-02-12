@@ -1,27 +1,38 @@
-function generateRandomKeyframes() {
-  const steps = [0, 20, 40, 60, 80, 100]; // Define keyframe steps
+/**
+ * Generates a random keyframes object for CSS animations.
+ *
+ * @param steps - An array of percentages representing keyframe steps.
+ * @param translateRange - The range for random translation as [min, max].
+ * @param scaleRange - The range for random scale as [min, max].
+ * @returns A record where keys are percentage strings and values are objects with transform property.
+ */
+function generateRandomKeyframes(
+  steps: number[] = [0, 20, 40, 60, 80, 100],
+  translateRange: [number, number] = [-300, 300],
+  scaleRange: [number, number] = [0.8, 1.2]
+): Record<string, { transform: string }> {
   const keyframes: Record<string, { transform: string }> = {};
-
-  let initialTransform = ''; // Store the initial transform for seamless looping
+  let initialTransform = "";
 
   steps.forEach((step, index) => {
-    const translateX = Math.floor(Math.random() * 600 - 300); // Random x translation (-300 to +300)
-    const translateY = Math.floor(Math.random() * 600 - 300); // Random y translation (-300 to +300)
-    const scale = (Math.random() * (1.2 - 0.8) + 0.8).toFixed(2); // Random scale (0.8 to 1.2)
+    const [min, max] = translateRange;
+    const translateX = Math.floor(Math.random() * (max - min + 1) + min);
+    const translateY = Math.floor(Math.random() * (max - min + 1) + min);
+    const scale = parseFloat(
+      (Math.random() * (scaleRange[1] - scaleRange[0]) + scaleRange[0]).toFixed(2)
+    );
 
     const transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
 
     if (index === 0) {
-      initialTransform = transform; // Save the initial transform
+      initialTransform = transform; // Save the first transform for seamless looping
     }
 
-    keyframes[`${step}%`] = { transform };
+    // For the last step ensure we use the initial transform
+    keyframes[`${step}%`] = { transform: step === 100 ? initialTransform : transform };
   });
-
-  keyframes['100%'] = { transform: initialTransform }; // Ensure seamless looping
 
   return keyframes;
 }
 
-  export default generateRandomKeyframes;
-  
+export default generateRandomKeyframes;
