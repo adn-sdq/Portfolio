@@ -28,7 +28,6 @@ function generateRandomKeyframes(
       initialTransform = transform; // Save the first transform for seamless looping
     }
 
-    // For the last step ensure we use the initial transform
     keyframes[`${step}%`] = { transform: step === 100 ? initialTransform : transform };
   });
 

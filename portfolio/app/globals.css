@@ -3,17 +3,30 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  
+  /* Ensure elements remain selectable */
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #000000;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
     --foreground: #ffffff;
   }
-} */
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -29,4 +42,73 @@ body {
   color: white;
   background: black;
   font-family: 'Inter', sans-serif;
+  cursor: none;
+}
+.cursor {
+  pointer-events: none;
+}
+
+.cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.cursor__ball--big {
+  transition: transform 0.3s ease;
+}
+
+.cursor__ball--big svg {
+  width: 60px;
+  height: 60px;
+}
+
+.cursor__ball--big circle {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.cursor__ball--small svg {
+  width: 8px;
+  height: 8px;
+}
+
+.cursor__ball--small circle {
+  fill: #fff;
+}
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: left;
+  transition: transform 0.5s ease-out;
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+}
+
+.scale-up {
+  transform: scale(1.5);
+}
+
+.hoverable {
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.hoverable:hover {
+  color: white;
 }
