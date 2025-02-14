@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import CustomCursor from "@/components/CustomCursor";
 import "./globals.css";
 
@@ -37,6 +38,7 @@ export default function RootLayout({
 
         {/* Analytics script */}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
