@@ -80,7 +80,7 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute top-[64rem] right-20">
-          <Image src="/logo.svg" alt="Adnan Memos" width={200} height={200} />
+          <Image src="/Logo.svg" alt="Adnan Memos" width={200} height={200} />
         </div>
         <div className="absolute top-[85rem] space-y-4">
           <p className="text-xs md:text-[1.125rem] md:w-[55%] tracking-[-0.01em] md:leading-[1.5rem]">
