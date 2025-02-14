@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import "@/app/globals.css";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
               <span className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
                 About
               </span>
-              <p className="text-xs md:text-[1.125rem] md:w-[52%] tracking-[-0.01em] md:leading-[1.5rem] text-justify">
+              <p className="text-xs md:text-[1.125rem] md:w-[53%] tracking-[-0.01em] md:leading-[1.5rem] text-justify">
                 A digital designer and developer, originally from India and
                 raised in Saudi Arabia, specializing in visual interface design
                 and development. Inspired by minimal art direction, web
@@ -89,24 +90,49 @@ export default function Home() {
           </p>
           <div className="w-screen flex flex-row justify-between pr-12 pb-5">
             <div className="flex flex-row space-x-2">
-              <button className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
+              <a
+                href="https://www.instagram.com/adn.memos/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
+              >
                 Instagram
-              </button>
-              <button className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
+              </a>
+              <a 
+              href="https://dribbble.com/adn_memos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable">
                 Dribbble
-              </button>
-              <button className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
+              </a>
+              <a 
+              href="https://www.behance.net/adn-memos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable ">
                 Behance
-              </button>
-              <button className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
+              </a>
+              <a 
+              href="https://github.com/Adnan-Memos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable ">
                 Github
-              </button>
-              <button className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
+              </a>
+              <a 
+              href="https://www.linkedin.com/in/adn-memos/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable ">
                 Linkedin
-              </button>
-              <button className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
+              </a>
+              <a 
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable ">
                 Resume
-              </button>
+              </a>
             </div>
             <div className="icons"></div>
             <div>© 2025 Adnan Memos</div>
