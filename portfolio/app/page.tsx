@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import MagneticLogo from "@/components/MagneticLogo";
+import FadeContent from "../components/FadeContent";
 import "@/app/globals.css";
 
 export default function Home() {
@@ -16,13 +18,13 @@ export default function Home() {
             personal.
           </p>
         </div>
-        <div className="absolute top-[36rem] text-white">
-          <div className="flex flex-col items-end md:flex-row justify-between">
+        <div className="relative top-[38rem] text-white">
+          <div className="flex flex-col md:flex-row items- justify-between">
             <div className="space-y-4">
               <span className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
                 About
               </span>
-              <p className="text-xs md:text-[1.125rem] md:w-[53%] tracking-[-0.01em] md:leading-[1.5rem] text-justify">
+              <p className="text-xs md:text-[1.125rem] md:w-[60%] tracking-[-0.01em] md:leading-[1.5rem] text-justify">
                 A digital designer and developer, originally from India and
                 raised in Saudi Arabia, specializing in visual interface design
                 and development. Inspired by minimal art direction, web
@@ -31,20 +33,32 @@ export default function Home() {
                 crafting seamless and refined experiences.
               </p>
             </div>
-            <Image
-              src="/image-1.png"
-              alt="Adnan Memos"
-              className="right-[2%]"
-              width={350}
-              height={350}
-            />
+              <FadeContent
+                blur={true}
+                duration={1000}
+                easing="ease-out"
+                initialOpacity={0}
+              >
+                <div
+                  className="absolute transform -translate-x-[22rem] -translate-y-[4.5rem]"
+                  style={{ width: "350px", height: "210px" }}
+                >
+                  <Image
+                    src="/image-1.png"
+                    alt="Adnan Memos"
+                    width={350}
+                    height={210}
+                    className="object-contain"
+                  />
+                </div>
+              </FadeContent>
           </div>
         </div>
         <div className="space-y-4 absolute top-[64rem]">
           <span className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
             Tools
           </span>
-          <div className="flex flex-col md:flex-row space-x-20 justify-between">
+          <div className="flex flex-col md:flex-row space-x-20 justify-between items-end">
             <div className="text-xs md:text-[1.125rem] md:w-[52%] tracking-[-0.01em] md:leading-[1.5rem]">
               Next.js
               <br />
@@ -81,14 +95,15 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute top-[64rem] right-20">
-          <Image src="/Logo.svg" alt="Adnan Memos" width={200} height={200} />
+          <MagneticLogo />{" "}
         </div>
-        <div className="absolute top-[85rem] space-y-4">
+        <div className="relative top-[85rem] space-y-4">
           <p className="text-xs md:text-[1.125rem] md:w-[55%] tracking-[-0.01em] md:leading-[1.5rem]">
-            Multi-Disciplinary Interactive Developer & Designer<br/>
+            Multi-Disciplinary Interactive Developer & Designer
+            <br />
             Designing Systems / Crafting Stories — based in RUH | HYD
           </p>
-          <div className="w-screen flex flex-row justify-between pr-12 pb-5">
+          <div className="relative flex flex-row justify-between pb-5">
             <div className="flex flex-row space-x-2">
               <a
                 href="https://www.instagram.com/adn.memos/"
@@ -98,43 +113,48 @@ export default function Home() {
               >
                 Instagram
               </a>
-              <a 
-              href="https://dribbble.com/adn_memos"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable">
+              <a
+                href="https://dribbble.com/adn_memos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
+              >
                 Dribbble
               </a>
-              <a 
-              href="https://www.behance.net/adn-memos"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable ">
+              <a
+                href="https://www.behance.net/adn-memos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable "
+              >
                 Behance
               </a>
-              <a 
-              href="https://github.com/Adnan-Memos"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable ">
+              <a
+                href="https://github.com/Adnan-Memos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable "
+              >
                 Github
               </a>
-              <a 
-              href="https://www.linkedin.com/in/adn-memos/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable ">
+              <a
+                href="https://www.linkedin.com/in/adn-memos/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable "
+              >
                 Linkedin
               </a>
-              <a 
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable ">
+              <a
+                href="/Resume-Adnan(15.01.25).pdf" // file path relative to public folder
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View my resume" // optional tooltip preview
+                className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable "
+              >
                 Resume
               </a>
             </div>
-            <div className="icons"></div>
             <div>© 2025 Adnan Memos</div>
           </div>
         </div>

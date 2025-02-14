@@ -30,13 +30,13 @@ export default function Navbar() {
           </a>
         </div>
         <a
-          href="mailto:adn.memos@gmail.com?subject=Project%20Collaboration%20Inquiry&body=Hi%20Adnan%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I'd%20love%20to%20discuss%20a%20potential%20project%20collaboration.%0A%0AProject%20Overview%3A%0A-%20%5BAdd%20brief%20description%5D%0A-%20%5BTimeline%2FScope%5D%0A%0ALooking%20forward%20to%20your%20response%2C%0A"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
-        >
-          Reach Out
-        </a>
+  href="mailto:adn.memos@gmail.com?subject=Project%20Collaboration%20Inquiry&body=Hi%20Adnan%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I'd%20love%20to%20discuss%20a%20potential%20project%20collaboration.%0A%0AProject%20Overview%3A%0A-%20%5BAdd%20brief%20description%5D%0A-%20%5BTimeline%2FScope%5D%0A%0ALooking%20forward%20to%20your%20response%2C%0A"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] transition duration-1000 hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
+>
+  Reach Out
+</a>
       </div>
 
       {/* Dropdown Menu for small devices */}
