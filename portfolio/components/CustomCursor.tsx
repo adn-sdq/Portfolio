@@ -4,8 +4,8 @@ import React, { useEffect, useRef } from "react";
 import "../app/globals.css";
 
 const CustomCursor: React.FC = () => {
-  const bigBallRef = useRef<HTMLDivElement>(null); // Outer circle
-  const smallBallRef = useRef<HTMLDivElement>(null); // Inner circle
+  const bigBallRef = useRef<HTMLDivElement>(null);
+  const smallBallRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let mouseX = 0;
@@ -14,8 +14,9 @@ const CustomCursor: React.FC = () => {
     let bigBallY = 0;
 
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX = e.pageX;
-      mouseY = e.pageY;
+      // Use clientX/clientY to avoid scroll offsets
+      mouseX = e.clientX;
+      mouseY = e.clientY;
 
       // Move small ball instantly; subtract 4 to center the 8px ball
       if (smallBallRef.current) {
@@ -29,8 +30,8 @@ const CustomCursor: React.FC = () => {
       bigBallY += (mouseY - bigBallY) * 0.1;
 
       if (bigBallRef.current) {
-        // Use a lowered scale value when "scale-up" is active
         const scale = bigBallRef.current.classList.contains("scale-up") ? 1.5 : 1;
+        // Big ball is 60px, so subtract 30 to center it
         bigBallRef.current.style.transform = `translate(${bigBallX - 30}px, ${bigBallY - 30}px) scale(${scale})`;
       }
 
@@ -63,7 +64,6 @@ const CustomCursor: React.FC = () => {
     <div className="cursor">
       <div ref={bigBallRef} className="cursor__ball cursor__ball--big">
         <svg viewBox="0 0 60 60" width="60" height="60">
-          {/* vector-effect ensures stroke scales properly */}
           <circle cx="30" cy="30" r="28" vectorEffect="non-scaling-stroke" />
         </svg>
       </div>
