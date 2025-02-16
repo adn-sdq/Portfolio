@@ -67,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* Tools list */}
-      <section className="space-y-4 absolute top-[64rem]">
+      <section className="space-y-4 absolute top-[70rem]">
         <span className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
           Tools
         </span>
@@ -109,7 +109,7 @@ export default function Home() {
       </section>
 
       {/* Magnetic logo */}
-      <section className="absolute top-[64rem] right-20">
+      <section className="absolute top-[70rem] right-20">
         <MagneticLogo />
       </section>
 
