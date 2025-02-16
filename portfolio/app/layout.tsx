@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import CustomCursor from "@/components/CustomCursor";
 import "./globals.css";
 
@@ -13,7 +13,8 @@ const interSans = Inter({
 
 export const metadata: Metadata = {
   title: "Adnan Memos — Portfolio",
-  description: "Multi-Disciplinary Interactive Developer & Designer Designing Systems / Crafting Stories — based in RUH | HYD",
+  description:
+    "Multi-Disciplinary Interactive Developer & Designer — Designing Systems / Crafting Stories — based in RUH | HYD",
   icons: {
     icon: "/Logo-2.svg",
   },
@@ -26,8 +27,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${interSans.variable} antialiased relative w-screen h-screen`}>
-        {/* Background Animation */}
+      <body
+        className={`${interSans.variable} antialiased relative w-screen h-screen`}
+      >
+        {/* Background & custom cursor */}
         <AnimatedBackground />
         <CustomCursor />
 
@@ -36,7 +39,7 @@ export default function RootLayout({
           {children}
         </main>
 
-        {/* Analytics script */}
+        {/* Analytics & performance insights */}
         <Analytics />
         <SpeedInsights />
       </body>
