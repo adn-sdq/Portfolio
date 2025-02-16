@@ -18,13 +18,13 @@ export default function Navbar() {
           <div className="flex items-center space-x-5 md:space-x-10">
             <a
               href="#articles"
-              className="text-white text-xs md:text-lg font-normal tracking-[-0.01em] select-none hover:underline underline-offset-4 hoverable"
+              className="text-white text-xs md:text-lg font-normal tracking-[-0.01em] select-none hover-underline underline-offset-2 hoverable"
             >
               Articles
             </a>
             <a
               href="#archives"
-              className="text-white text-xs md:text-lg font-normal tracking-[-0.01em] select-none hover:underline underline-offset-4 hoverable"
+              className="text-white text-xs md:text-lg font-normal tracking-[-0.01em] select-none hover-underline underline-offset-2 hoverable"
             >
               Archives
             </a>
