@@ -8,7 +8,7 @@
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
-  
+
   /* Ensure elements remain selectable */
   -webkit-user-select: text;
   -moz-user-select: text;
@@ -34,14 +34,14 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 html {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 body {
   color: white;
   background: black;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   cursor: none;
 }
 .cursor {
@@ -83,7 +83,7 @@ body {
 }
 
 .hover-underline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);

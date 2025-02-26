@@ -1,8 +1,9 @@
 "use client";
 import { useRef, useEffect, useState, ReactNode } from "react";
+import Image from "next/image";
 
 interface FadeContentProps {
-  children: ReactNode;
+  children?: ReactNode;
   blur?: boolean;
   duration?: number;
   easing?: string;
@@ -13,9 +14,8 @@ interface FadeContentProps {
 }
 
 const FadeContent: React.FC<FadeContentProps> = ({
-  children,
-  blur = false,
-  duration = 1000,
+  blur = true,
+  duration = 1500,
   easing = "ease-out",
   delay = 0,
   threshold = 0.1,
@@ -49,14 +49,22 @@ const FadeContent: React.FC<FadeContentProps> = ({
   return (
     <div
       ref={ref}
-      className={className}
+      className={`${className} flex justify-center items-center`}
       style={{
         opacity: inView ? 1 : initialOpacity,
         transition: `opacity ${duration}ms ${easing}, filter ${duration}ms ${easing}`,
-        filter: blur ? (inView ? 'blur(0px)' : 'blur(10px)') : 'none',
+        filter: blur ? (inView ? "blur(0px)" : "blur(10px)") : "none",
       }}
     >
-      {children}
+      <div className="relative flex justify-center items-center w-[270px] h-[180px] sm:w-[200px] sm:h-[150px]  md:w-[270px] md:h-[180px] lg:w-[350px] lg:h-[210px]">
+        <Image
+          src="/image-1.png"
+          alt="Adnan Memos"
+          width={350}
+          height={210}
+          className="object-contain"
+        />
+      </div>
     </div>
   );
 };

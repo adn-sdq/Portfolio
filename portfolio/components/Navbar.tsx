@@ -14,7 +14,7 @@ export default function Navbar() {
         </div>
 
         {/* Center navigation links */}
-        <div className="hidden md:flex flex-1 items-center justify-end pr-80">
+        <div className="hidden md:flex flex-1 items-center justify-end pr-[20vw]">
           <div className="flex items-center space-x-5 md:space-x-10">
             <a
               href="#articles"

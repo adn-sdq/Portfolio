@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 
@@ -23,7 +23,9 @@ export default function MagneticLogo() {
     const updateTransform = () => {
       if (logoRef.current) {
         // Reduced the multiplier to 0.3 for an even more subtle sticky effect
-        logoRef.current.style.transform = `translate(${offsetX * 0.3}px, ${offsetY * 0.3}px)`;
+        logoRef.current.style.transform = `translate(${offsetX * 0.3}px, ${
+          offsetY * 0.3
+        }px)`;
         // Transition remains for smoother effect
         logoRef.current.style.transition = "transform 0.3s ease-out";
       }
@@ -51,15 +53,13 @@ export default function MagneticLogo() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-[200px] h-[200px]">
+    <div
+      ref={containerRef}
+      className="relative w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px]"
+    >
       {/* Outer SVG logo layer updated smoothly via ref */}
       <div ref={logoRef} className="absolute inset-0">
-        <Image 
-          src="/Logo.svg" 
-          alt="Logo" 
-          fill 
-          className="object-contain" 
-        />
+        <Image src="/Logo.svg" alt="Logo" fill className="object-contain" />
       </div>
     </div>
   );

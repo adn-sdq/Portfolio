@@ -2,14 +2,14 @@
 
 import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
-import Image from "next/image";
 import "@/app/globals.css";
+import "@/components/FadeContent";
 
 // Dynamically import heavy client components to improve load concurrency.
 const MagneticLogo = dynamic(() => import("@/components/MagneticLogo"), {
   ssr: false,
 });
-const FadeContent = dynamic(() => import("../components/FadeContent"), {
+const FadeContent = dynamic(() => import("@/components/FadeContent"), {
   ssr: false,
 });
 
@@ -28,14 +28,16 @@ export default function Home() {
         </p>
       </section>
 
-      {/* About section */}
-      <section className="relative top-[64vh] text-white">
-        <div className="flex flex-col md:flex-row justify-between items-end">
-          <div className="space-y-4">
-            <span className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
+      {/* About and FadeContent Section */}
+      <section className="relative sm:top-[60vh] top-[55vh] text-white">
+        {/* Wrapper for About Section and FadeContent */}
+        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end space-y-32 sm:space-y-0 sm:space-x-8">
+          {/* About section */}
+          <div className="space-y-4 w-full sm:w-[60%]">
+            <span className="text-white text-[10px] md:text-[15px] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
               About
             </span>
-            <p className="text-xs md:text-[1.125rem] md:w-[60%] tracking-[-0.01em] md:leading-[1.5rem] text-justify">
+            <p className="text-xs w-full md:text-[1.125rem] tracking-[-0.01em] md:leading-[1.5rem] text-justify">
               A digital designer and developer, originally from India and raised
               in Saudi Arabia, specializing in visual interface design and
               development. Inspired by minimal art direction, web development,
@@ -44,89 +46,70 @@ export default function Home() {
               refined experiences.
             </p>
           </div>
-          <FadeContent
-            blur
-            duration={1000}
-            easing="ease-out"
-            initialOpacity={0}
-          >
-            <div
-              className="relative"
-              style={{ width: "350px", height: "210px" }}
-            >
-              <Image
-                src="/image-1.png"
-                alt="Adnan Memos"
-                width={350}
-                height={210}
-                className="object-contain"
-              />
+
+          {/* FadeContent Section */}
+          <div className="flex justify-center items-center w-full sm:w-auto">
+            <FadeContent />
+          </div>
+        </div>
+      </section>
+
+      {/* Tools and Magnetic Logo section */}
+      <section className="relative md:top-[110vh] sm:top-[95vh] top-[80vh]">
+        {/* Wrapper for tools and magnetic logo */}
+        <div className="flex flex-col sm:flex-row justify-between items-start space-y-32 sm:space-y-0">
+          {/* Tools Section */}
+          <div className="space-y-4">
+            <span className="text-white text-[10px] md:text-[15px] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
+              Tools
+            </span>
+            <div className="flex flex-row space-x-10 md:space-x-20 justify-between items-end">
+              <div className="flex flex-col text-xs md:text-[1.125rem] tracking-[-0.01em] space-y-1 md:leading-[1.5rem]">
+                <div>Next.js</div>
+                <div>React</div>
+                <div>Tailwind</div>
+                <div>Typescript</div>
+                <div>Prisma</div>
+              </div>
+              <div className="flex flex-col text-xs md:text-[1.125rem] tracking-[-0.01em] space-y-1 md:leading-[1.5rem]">
+                <div>Supabase</div>
+                <div>PostgreSQL</div>
+                <div>Docker</div>
+                <div>Figma</div>
+                <div>Framer</div>
+              </div>
+              <div className="flex flex-col text-xs md:text-[1.125rem] tracking-[-0.01em] space-y-1 md:leading-[1.5rem]">
+                <div>Lightroom</div>
+                <div>Illustrator</div>
+                <div>Blender</div>
+                <div>Photoshop</div>
+                <div>Da Vinci</div>
+              </div>
             </div>
-          </FadeContent>
-        </div>
-      </section>
+          </div>
 
-      {/* Tools list */}
-      <section className="space-y-4 absolute top-[70rem]">
-        <span className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
-          Tools
-        </span>
-        <div className="flex flex-col md:flex-row space-x-20 justify-between items-end">
-          <div className="text-xs md:text-[1.125rem] md:w-[52%] tracking-[-0.01em] md:leading-[1.5rem]">
-            Next.js
-            <br />
-            React
-            <br />
-            Tailwind
-            <br />
-            Typescript
-            <br />
-            Prisma
-          </div>
-          <div className="text-xs md:text-[1.125rem] md:w-[52%] tracking-[-0.01em] md:leading-[1.5rem]">
-            Supabase
-            <br />
-            PostgreSQL
-            <br />
-            Docker
-            <br />
-            Figma
-            <br />
-            Framer
-          </div>
-          <div className="text-xs md:text-[1.125rem] md:w-[52%] tracking-[-0.01em] md:leading-[1.5rem]">
-            Lightroom
-            <br />
-            Illustrator
-            <br />
-            Blender
-            <br />
-            Photoshop
-            <br />
-            Da Vinci
+          {/* Magnetic Logo Section */}
+          <div className="flex justify-center items-center w-full sm:w-auto ">
+            {/* Magnetic logo */}
+            <MagneticLogo />
           </div>
         </div>
-      </section>
-
-      {/* Magnetic logo */}
-      <section className="absolute top-[70rem] right-20">
-        <MagneticLogo />
       </section>
 
       {/* Footer / Contact section */}
-      <footer className="relative top-[85rem] space-y-4">
-        <p className="text-xs md:text-[1.125rem] md:w-[55%] tracking-[-0.01em] md:leading-[1.5rem]">
+      <footer className="relative md:top-[170vh] space-y-4 top-[100vh]">
+        <p className="text-[0.7rem] md:text-[1.125rem] md:w-[55%] tracking-[-0.01em] md:leading-[1.5rem]">
           Multi-Disciplinary Interactive Developer & Designer
           <br />
           Designing Systems / Crafting Stories — based in RUH | HYD
         </p>
-        <div className="relative flex flex-col md:flex-row justify-between pb-5">
-          <div className="flex flex-row space-x-2">
+        <div className="relative flex flex-col md:flex-row justify-between pb-9 md:pb-6 space-y-8 md:space-y-0">
+          <div className="flex flex-row space-x-1 md:space-x-2">
             <a
               href="https://www.instagram.com/adn.memos/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
+              className="text-white text-[0.6rem] md:text-[0.938rem] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
             >
               Instagram
             </a>
@@ -134,7 +117,7 @@ export default function Home() {
               href="https://dribbble.com/adn_memos"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
+              className="text-white text-[0.6rem] md:text-[0.938rem] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
             >
               Dribbble
             </a>
@@ -142,7 +125,7 @@ export default function Home() {
               href="https://www.behance.net/adn-memos"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
+              className="text-white text-[0.6rem] md:text-[0.938rem] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
             >
               Behance
             </a>
@@ -150,7 +133,7 @@ export default function Home() {
               href="https://github.com/Adnan-Memos"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
+              className="text-white text-[0.6rem] md:text-[0.938rem] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
             >
               Github
             </a>
@@ -158,7 +141,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/adn-memos/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
+              className="text-white text-[0.6rem] md:text-[0.938rem] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
             >
               Linkedin
             </a>
@@ -167,12 +150,14 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               title="View my resume"
-              className="text-white text-[10px] md:text-[15px] font-normal select-none py-1 px-3 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
+              className="text-white text-[0.6rem] md:text-[0.938rem] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
             >
               Resume
             </a>
           </div>
-          <div>© 2025 Adnan Memos</div>
+          <div className="absolute text-[0.7rem] md:text-[1em] right-0">
+            © 2025 Adnan Memos
+          </div>
         </div>
       </footer>
     </div>

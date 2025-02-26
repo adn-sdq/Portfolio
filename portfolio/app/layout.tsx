@@ -32,10 +32,11 @@ export default function RootLayout({
       >
         {/* Background & custom cursor */}
         <AnimatedBackground />
-        <CustomCursor />
-
+        <div className="hidden md:block">
+          <CustomCursor />
+        </div>
         {/* Main content */}
-        <main className="relative px-4 md:px-6 py-3 md:py-4 z-10">
+        <main className="relative px-4 md:px-8 py-3 md:py-4 z-10">
           {children}
         </main>
 
