@@ -90,8 +90,10 @@ export default function Home() {
 
           {/* Magnetic Logo Section */}
           <div className="flex justify-center items-center w-full sm:w-auto ">
-            {/* Magnetic logo */}
-            <MagneticLogo />
+            <div className="relative md:right-14 sm:right-0">
+              {/* Magnetic logo */}
+              <MagneticLogo />
+            </div>
           </div>
         </div>
       </section>
