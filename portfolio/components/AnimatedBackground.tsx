@@ -1,4 +1,6 @@
-export default function AnimatedBackground() {
+import React from 'react';
+
+const AnimatedBackground: React.FC = () => {
   return (
     <div className="fixed inset-0 z-0 w-screen h-screen bg-background overflow-hidden">
       {/* Oval 1 */}
@@ -11,4 +13,6 @@ export default function AnimatedBackground() {
       <div className="absolute bottom-[-10vh] right-[-30vw] w-[75vh] h-[75vh] bg-[#224faa] rounded-full filter blur-[150px] animate-blob-4 md:w-[70vw] md:h-[70vw]"></div>
     </div>
   );
-}
+};
+
+export default AnimatedBackground; 

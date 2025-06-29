@@ -12,6 +12,7 @@ const CustomCursor: React.FC = () => {
     let mouseY = 0;
     let bigBallX = 0;
     let bigBallY = 0;
+    let animationFrameId: number;
 
     const handleMouseMove = (e: MouseEvent) => {
       // Use clientX/clientY to avoid scroll offsets
@@ -35,27 +36,32 @@ const CustomCursor: React.FC = () => {
         bigBallRef.current.style.transform = `translate(${bigBallX - 30}px, ${bigBallY - 30}px) scale(${scale})`;
       }
 
-      requestAnimationFrame(animateBigBall);
+      animationFrameId = requestAnimationFrame(animateBigBall);
     };
 
     document.addEventListener("mousemove", handleMouseMove);
     animateBigBall();
 
+    const handleMouseEnter = () => {
+      if (bigBallRef.current) bigBallRef.current.classList.add("scale-up");
+    };
+    
+    const handleMouseLeave = () => {
+      if (bigBallRef.current) bigBallRef.current.classList.remove("scale-up");
+    };
+
     const hoverables = document.querySelectorAll(".hoverable");
     hoverables.forEach((element) => {
-      element.addEventListener("mouseenter", () => {
-        if (bigBallRef.current) bigBallRef.current.classList.add("scale-up");
-      });
-      element.addEventListener("mouseleave", () => {
-        if (bigBallRef.current) bigBallRef.current.classList.remove("scale-up");
-      });
+      element.addEventListener("mouseenter", handleMouseEnter);
+      element.addEventListener("mouseleave", handleMouseLeave);
     });
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
       hoverables.forEach((element) => {
-        element.removeEventListener("mouseenter", () => {});
-        element.removeEventListener("mouseleave", () => {});
+        element.removeEventListener("mouseenter", handleMouseEnter);
+        element.removeEventListener("mouseleave", handleMouseLeave);
       });
     };
   }, []);

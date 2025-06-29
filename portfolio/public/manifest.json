@@ -1,0 +1,26 @@
+{
+  "name": "Adnan Memos Portfolio",
+  "short_name": "Adnan Memos",
+  "description": "Multi-Disciplinary Interactive Developer & Designer portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/Logo-2.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "design", "development"],
+  "lang": "en-US",
+  "dir": "ltr"
+} 

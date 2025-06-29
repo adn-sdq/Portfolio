@@ -19,7 +19,7 @@ export default function Home() {
       <Navbar />
 
       {/* Intro text */}
-      <section className="absolute top-[15rem] right-0 md:w-[43%] text-white">
+      <section className="absolute top-[15rem] right-0 md:w-[43%] text-white" aria-label="Introduction">
         <p className="text-xs md:text-[1.125rem] tracking-[-0.01em] md:leading-[1.5rem] text-justify">
           I am a person who seeks deeper meaning, always curious and reasoning
           with logic while embracing organization and minimalism. Yet, some
@@ -29,11 +29,11 @@ export default function Home() {
       </section>
 
       {/* About and FadeContent Section */}
-      <section className="relative sm:top-[60vh] top-[55vh] text-white">
+      <section className="relative sm:top-[60vh] top-[55vh] text-white" aria-label="About section">
         {/* Wrapper for About Section and FadeContent */}
         <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end space-y-32 sm:space-y-0 sm:space-x-8">
           {/* About section */}
-          <div className="space-y-4 w-full sm:w-[60%]">
+          <article className="space-y-4 w-full sm:w-[60%]">
             <span className="text-white text-[10px] md:text-[15px] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
               About
             </span>
@@ -45,7 +45,7 @@ export default function Home() {
               visual rhythm, and the harmony of elements, crafting seamless and
               refined experiences.
             </p>
-          </div>
+          </article>
 
           {/* FadeContent Section */}
           <div className="flex justify-center items-center w-full sm:w-auto">
@@ -55,11 +55,11 @@ export default function Home() {
       </section>
 
       {/* Tools and Magnetic Logo section */}
-      <section className="relative md:top-[110vh] sm:top-[95vh] top-[80vh]">
+      <section className="relative md:top-[110vh] sm:top-[95vh] top-[80vh]" aria-label="Skills and tools">
         {/* Wrapper for tools and magnetic logo */}
         <div className="flex flex-col sm:flex-row justify-between items-start space-y-32 sm:space-y-0">
           {/* Tools Section */}
-          <div className="space-y-4">
+          <article className="space-y-4">
             <span className="text-white text-[10px] md:text-[15px] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hoverable">
               Tools
             </span>
@@ -86,7 +86,7 @@ export default function Home() {
                 <div>Da Vinci</div>
               </div>
             </div>
-          </div>
+          </article>
 
           {/* Magnetic Logo Section */}
           <div className="flex justify-center items-center w-full sm:w-auto ">
@@ -97,7 +97,7 @@ export default function Home() {
       </section>
 
       {/* Footer / Contact section */}
-      <footer className="relative md:top-[170vh] space-y-4 top-[100vh]">
+      <footer className="relative md:top-[170vh] space-y-4 top-[100vh]" role="contentinfo">
         <p className="text-[0.7rem] md:text-[1.125rem] md:w-[55%] tracking-[-0.01em] md:leading-[1.5rem]">
           Multi-Disciplinary Interactive Developer & Designer
           <br />
@@ -109,6 +109,7 @@ export default function Home() {
               href="https://www.instagram.com/adn.memos/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Adnan's Instagram profile"
               className="text-white text-[0.6rem] md:text-[0.938rem] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
             >
               Instagram
@@ -117,6 +118,7 @@ export default function Home() {
               href="https://dribbble.com/adn_memos"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Adnan's Dribbble profile"
               className="text-white text-[0.6rem] md:text-[0.938rem] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
             >
               Dribbble
@@ -125,6 +127,7 @@ export default function Home() {
               href="https://www.behance.net/adn-memos"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Adnan's Behance profile"
               className="text-white text-[0.6rem] md:text-[0.938rem] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
             >
               Behance
@@ -133,6 +136,7 @@ export default function Home() {
               href="https://github.com/Adnan-Memos"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Adnan's GitHub profile"
               className="text-white text-[0.6rem] md:text-[0.938rem] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
             >
               Github
@@ -141,6 +145,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/adn-memos/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Adnan's LinkedIn profile"
               className="text-white text-[0.6rem] md:text-[0.938rem] font-normal select-none py-[0.08rem] px-2 md:px-[0.8rem] md:py-[0.08rem] border border-white tracking-[-0.01em] rounded-[7px] md:rounded-[10px] hover:font-medium hover:bg-white hover:text-[#224faa] hoverable"
             >
               Linkedin

@@ -39,10 +39,29 @@ html {
 }
 
 body {
-  color: white;
-  background: black;
+  color: var(--foreground);
+  background: var(--background);
   font-family: "Inter", sans-serif;
   cursor: none;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: black;
+    background: white;
+  }
+  
+  .cursor__ball--big circle {
+    stroke: #000;
+  }
+  
+  .cursor__ball--small circle {
+    fill: #000;
+  }
+  
+  .hover-underline::after {
+    background-color: #000000;
+  }
 }
 .cursor {
   pointer-events: none;
@@ -107,4 +126,40 @@ body {
 .hoverable {
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+.hoverable:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: light) {
+  .hoverable:focus-visible {
+    outline-color: #000000;
+  }
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }

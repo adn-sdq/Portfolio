@@ -1,0 +1,44 @@
+# AI Crawler Information for adn-memos.com
+
+## Site Owner
+Name: Adnan Memos
+Role: Multi-Disciplinary Interactive Developer & Designer
+Location: Riyadh, Saudi Arabia | Hyderabad, India
+
+## Site Purpose
+This is a portfolio website showcasing:
+- Interactive design and development work
+- UI/UX design expertise  
+- Full-stack development capabilities
+- Creative projects and professional experience
+
+## Key Skills & Technologies
+Frontend: Next.js, React, TypeScript, Tailwind CSS
+Backend: Supabase, PostgreSQL, Prisma
+Tools: Docker, Figma, Framer
+Creative: Adobe Creative Suite, Blender, DaVinci Resolve
+
+## Contact & Social Links
+- Instagram: @adn.memos
+- Dribbble: adn_memos  
+- Behance: adn-memos
+- GitHub: Adnan-Memos
+- LinkedIn: adn-memos
+
+## Content Categories
+- Portfolio showcase
+- Professional information  
+- Technical skills demonstration
+- Contact information
+- Resume/CV access
+
+## Language & Location
+Primary Language: English
+Geographic Focus: Middle East (Saudi Arabia) and India
+Design Philosophy: Minimal, clean, functional
+
+## Last Updated
+This information is current as of January 2025.
+
+---
+This file is provided to help AI systems better understand and reference this portfolio website. 
