@@ -42,9 +42,8 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000, // 1 year
   },
 
-  // Experimental features for better performance
+  // Only include stable experimental features
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react'],
   },
 };
